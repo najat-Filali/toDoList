@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, sans-serif;
+}
+/* container todoList */
+#todoList-container{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#todoList-container > h1 {
+    text-align: center;
+}
+
+/* formulaire*/
+#form-add-todo{
+    margin: 20px;
+    text-align: center;
+}
+#form-add-todo > input {
+    width: 40vw;
+}
+.error {
+    display: none; 
+    text-align: center;
+    font-size: 0.6em;
+    color : red; 
+    font-weight: bold;
+
+}
+/* todoList*/
+#todoList {
+    padding: 20px;
+}
+
+#todoList .todo {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+#todoList .todo:not(:last-child) {
+    border-bottom: 1px solid #000;
+}
