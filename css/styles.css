@@ -8,6 +8,7 @@ body{
 #todoList-container{
     display: grid;
     grid-template-columns: 1fr;
+    box-shadow:2px #000;
 }
 
 #todoList-container > h1 {
@@ -17,12 +18,14 @@ body{
 /* navigation pages */
 .pagination {
     display: inline-block;
+    margin: 20px;
+    text-align: center;
   }
   
   .pagination a {
     color: black;
     float: right;
-    padding: 8px 16px;
+    padding: 6px 10px;
     text-decoration: none;
     transition: background-color .3s;
     border: 1px solid #ddd;

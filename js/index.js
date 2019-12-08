@@ -77,36 +77,8 @@ document.forms['form-add-todo'].addEventListener(
 
 */
 
-
 // la meme chose refactoré 
 let cpt =0; 
-
-function createTodo(todoTxt){ 
-//generer tout ca ds une string
-// backtic permettent saut de ligne, injecter des variables, faire des etiquettes
-const todoHTML =` 
-    <div class="todo">
-        <input type="checkbox" id="checkbox-${cpt}">
-        <label for="checkbox-${cpt}">${todoTxt}</label>
-        <button onclick="closeTodo(this.previousElementSibling.previousElementSibling,
-            this.parentNode)" class="bt-close">&times;</button>
-    </div>
-`; 
-
-    document.querySelector('#todoList').innerHTML += todoHTML;   //ajout de html
-}
-
-function checkValue(val){
-    return val.length > 2; 
-}
-
-function closeTodo(checkboxTag, todoTag){
-    if (checkboxTag.checked) {
-        const response =confirm("Veux tu vraiment supprimer cette tache ?"); 
-        if (!response) return; 
-    }
-    document.querySelector('#todoList').removeChild(todoTag);  
-}
 
 document.forms['form-add-todo'].addEventListener( 
     'submit',               //événement que je veux écouter

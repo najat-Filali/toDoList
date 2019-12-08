@@ -1,10 +1,4 @@
 
-
-function RedirectionJavascript(){
-    document.location.href="./maTodoList.html";
-  }
-
-
 document.forms.formId.addEventListener(
     'submit',
     function(e){
