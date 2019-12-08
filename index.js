@@ -88,7 +88,8 @@ const todoHTML =`
     <div class="todo">
         <input type="checkbox" id="checkbox">
         <label for="checkbox">${todoTxt}</label>
-        <button class="bt-close">&times;</button>
+        <button onclick="closeTodo(this.previousElementSibling.previousElementSibling,
+            this.parentNode)" class="bt-close">&times;</button>
     </div>
 `; 
 
@@ -97,6 +98,14 @@ const todoHTML =`
 
 function checkValue(val){
     return val.length > 2; 
+}
+
+function closeTodo(checkboxTag, todoTag){
+    if (checkboxTag.checked) {
+        const response =confirm("Veux tu vraiment supprimer cette tache ?"); 
+        if (!response) return; 
+    }
+    document.querySelector('#todoList').removeChild(todoTag);
 }
 
 document.forms['form-add-todo'].addEventListener( 
@@ -110,7 +119,6 @@ document.forms['form-add-todo'].addEventListener(
             errorTxt.style.display ='block'; 
             setTimeout(()=>{
                 errorTxt.style.display = 'none';
-
             },2500); 
             }    
     }
