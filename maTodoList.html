@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ma Todo List</title>
+    <link rel="stylesheet" href="css/stylesIndex.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <section id="todoList-container">
+        <h1> Ma liste de choses à faire</h1>
+        <form name="form-add-todo" action="#confirm" id="form-add-todo" method="GET">
+            <fieldset>
+                <legend>Ajouter une tâche</legend>
+                <input name="todoTxt" type="text" placeholder="Tâche à faire" required>
+                <button type="submit"> Ajouter </button>
+            </fieldset>
+        </form>
+
+        <div class="pagination">
+            <a href="#">❮</a>
+            <a href="#">❯</a>
+        </div>
+
+        <div class="error">Il y a quelque chose qui ne va pas</div>
+        
+        <div id="todoList">
+        </div>
+    </section>
+
+    <script src="./js/index.js"></script>
+    
+</body>
+</html>

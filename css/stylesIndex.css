@@ -1,0 +1,22 @@
+body {
+    margin: 20px;
+}
+
+button{
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border:1px solid lightblue;
+    background-color: white;
+    color : rgb(54, 54, 54);
+}
+
+button:hover {
+    box-shadow: 0 2px 3px 0 lightblue, 0 2px 3px 0 lightblue;
+}
+
+input {
+    display: inline-block;
+    justify-content: center;
+}
+

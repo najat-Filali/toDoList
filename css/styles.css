@@ -1,5 +1,5 @@
 body{
-    margin: 0;
+    margin: 20px;
     padding: 0;
     font-family: Verdana, sans-serif;
 }
@@ -14,22 +14,48 @@ body{
     text-align: center;
 }
 
+/* navigation pages */
+.pagination {
+    display: inline-block;
+  }
+  
+  .pagination a {
+    color: black;
+    float: right;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+  }
+  
+  .pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+  }
+  
+  .pagination a:hover:not(.active) {
+      background-color: #ddd;
+}
+
 /* formulaire*/
 #form-add-todo{
     margin: 20px;
     text-align: center;
 }
+
 #form-add-todo > input {
     width: 40vw;
 }
+
 .error {
     display: none; 
     text-align: center;
     font-size: 0.6em;
     color : red; 
     font-weight: bold;
-
 }
+
 /* todoList*/
 #todoList {
     padding: 20px;
@@ -41,10 +67,12 @@ body{
     display: flex;
     justify-content: space-between;
 }
+
 #todoList .todo [type=checkbox]:checked + label{
     text-decoration: line-through;
     opacity: 0.5;
 }
+
 #todoList .todo:not(:last-child) {
     border-bottom: 1px solid #000;
 }

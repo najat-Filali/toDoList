@@ -79,15 +79,15 @@ document.forms['form-add-todo'].addEventListener(
 
 
 // la meme chose refactoré 
+let cpt =0; 
 
-function createTodo(todoTxt){
-  
+function createTodo(todoTxt){ 
 //generer tout ca ds une string
 // backtic permettent saut de ligne, injecter des variables, faire des etiquettes
 const todoHTML =` 
     <div class="todo">
-        <input type="checkbox" id="checkbox">
-        <label for="checkbox">${todoTxt}</label>
+        <input type="checkbox" id="checkbox-${cpt}">
+        <label for="checkbox-${cpt}">${todoTxt}</label>
         <button onclick="closeTodo(this.previousElementSibling.previousElementSibling,
             this.parentNode)" class="bt-close">&times;</button>
     </div>
@@ -105,7 +105,7 @@ function closeTodo(checkboxTag, todoTag){
         const response =confirm("Veux tu vraiment supprimer cette tache ?"); 
         if (!response) return; 
     }
-    document.querySelector('#todoList').removeChild(todoTag);
+    document.querySelector('#todoList').removeChild(todoTag);  
 }
 
 document.forms['form-add-todo'].addEventListener( 
@@ -114,6 +114,7 @@ document.forms['form-add-todo'].addEventListener(
         e.preventDefault();   
         if(checkValue(this.todoTxt.value)){
             createTodo(this.todoTxt.value); 
+            cpt ++;
         } else{
             const errorTxt = document.querySelector('.error'); 
             errorTxt.style.display ='block'; 
