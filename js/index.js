@@ -79,14 +79,22 @@ document.forms['form-add-todo'].addEventListener(
 
 // la meme chose refactoré 
 let cpt =0; 
+const formAddTodo = document.forms['form-add-todo']; 
 
 document.forms['form-add-todo'].addEventListener( 
     'submit',               //événement que je veux écouter
     function(e) {           // comportement lors de l'evenement
+
         e.preventDefault();   
-        if(checkValue(this.todoTxt.value)){
-            createTodo(this.todoTxt.value); 
+        const userInput = this.todoTxt.value;
+
+        if(checkValue(userInput)){
+            console.log('lllll'); 
+            tabTodo.push(new Todo(userInput)); 
+            createTodo(new Todo(userInput)); 
+            localStorage.setItem('todo', JSON.stringify(tabTodo)); 
             cpt ++;
+            formAddTodo.reset(); //remet à zero l'input
         } else{
             const errorTxt = document.querySelector('.error'); 
             errorTxt.style.display ='block'; 
